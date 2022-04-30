@@ -1,4 +1,7 @@
+docker pull sebasgarciamo/app-config
+
 docker network create distribuidos
+
 docker run -p 5432:5432 --name postgres --network distribuidos -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=db_invoice -d icesiops/postgres:0.1.0
 
 docker run -p 3306:3306 --name mysql --network distribuidos -e MYSQL_ROOT_PASSWORD=mysql -e MYSQL_DATABASE=db_operation -d icesiops/mysql:0.1.0
